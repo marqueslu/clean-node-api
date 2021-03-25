@@ -7,7 +7,7 @@ import { LogControllerDecorator } from './log'
 const makeController = (): Controller => {
   class ControllerStub implements Controller {
     async handle (httpRequest: HttpResponse): Promise<HttpResponse> {
-      return new Promise(resolve => resolve(ok(makeFakeAccount())))
+      return ok(makeFakeAccount())
     }
   }
   return new ControllerStub()
@@ -15,9 +15,7 @@ const makeController = (): Controller => {
 
 const makeLogErrorRepository = (): LogErrorRepository => {
   class LogErrorRepositoryStub implements LogErrorRepository {
-    async logError (stack: string): Promise<void> {
-      return new Promise(resolve => resolve())
-    }
+    async logError (stack: string): Promise<void> {}
   }
   return new LogErrorRepositoryStub()
 }

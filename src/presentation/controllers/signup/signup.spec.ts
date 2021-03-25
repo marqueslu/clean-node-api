@@ -22,7 +22,7 @@ const makeFakeAccount = (): AccountModel => ({
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
     async add (account: AddAccountModel): Promise<AccountModel> {
-      return new Promise(resolve => resolve(makeFakeAccount()))
+      return makeFakeAccount()
     }
   }
   return new AddAccountStub()
