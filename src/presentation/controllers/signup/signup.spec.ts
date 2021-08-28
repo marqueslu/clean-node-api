@@ -7,7 +7,7 @@ import {
   HttpRequest,
   Validation
 } from './signup-protocols'
-import { badRequest, ok } from '../../helpers/http-helper'
+import { badRequest, ok } from '../../helpers/http/http-helper'
 
 const makeFakeAccount = (): AccountModel => ({
   id: 'valid_id',
